@@ -1,0 +1,15 @@
+paquetes_rh:
+- hosts
+- java-17-openjdk
+- mariadb-server
+- mariadb
+
+paquetes_deb:
+- apache2
+- openjdk-17-jdk
+- mariadb-server
+- mariadb-client
+
+tomcat_url: 
+
+
