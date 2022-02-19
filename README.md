@@ -31,4 +31,5 @@ y 2 GB de Swap.
 #### Defensa Obligatorio 23/2
 ##### Defensa en Lab 113 
 
-Hasta las 21:00 hs 
+Hasta las 21:00Hs del martes 22
+
