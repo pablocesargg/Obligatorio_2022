@@ -2,7 +2,7 @@
 #
 ### Taller Instalacion Servidores Linux
 
-##Parte A:
+## Parte A:
 
 Para realizar el escenario que pide la letra vamos a necesita contar con un equipo bastión con ansible instalado.
 
