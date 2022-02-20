@@ -1,8 +1,9 @@
 paquetes_rh:
-- hosts
+- httpd
 - java-17-openjdk
 - mariadb-server
 - mariadb
+- tar
 
 paquetes_deb:
 - apache2
@@ -10,6 +11,9 @@ paquetes_deb:
 - mariadb-server
 - mariadb-client
 
-tomcat_url: 
+
+tomcat_url: "https://dlcdn.apache.org/tomcat/tomcat-10/v10.0.16/bin/apache-tomcat-10.0.16.tar.gz"
+
+
 
 

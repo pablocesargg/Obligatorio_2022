@@ -1,0 +1,13 @@
+---
+- hosts: linux
+  remote_user: ansible
+  become: yes 
+  become_method: sudo
+
+  tasks:
+
+  - name: Ver interfaces de red
+    debug:
+      msg: "Interfaces: {{ item }}"
+    loop: "{{ ansible_interfaces }}"
+    

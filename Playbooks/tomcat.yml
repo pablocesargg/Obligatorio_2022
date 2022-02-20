@@ -1,5 +1,5 @@
 ---
-- name: instalacion de servidor Tomcat
+- name: Requisitos para instalacion de servidores
   hosts: linux
   become: yes
 

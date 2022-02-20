@@ -1,2 +1,13 @@
 ---
 # tasks file for roles/debian-firewall
+- name: UFW instalado en la ultima version 
+  apt:
+    name: ufw
+    state: latest
+    update_cache: yes
+
+- name: Regla por defecto para interfaz loopback
+  ufw: 
+    interface: io
+    policy: allow 
+    
