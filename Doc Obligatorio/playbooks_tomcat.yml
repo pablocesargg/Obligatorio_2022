@@ -1,0 +1,16 @@
+---
+- name: instalacion de servidor Tomcat
+  host: all
+  become: yes
+
+  tasks: 
+  - name: install java 
+    yum:
+      name: java
+      state: latest
+
+  - name: Descargando paquetes del servidor Tomcat
+    get_url:
+      urd: 
+
+  
