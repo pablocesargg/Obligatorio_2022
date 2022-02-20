@@ -1,7 +1,7 @@
-Role Name
+Role Name: Paquetes Redhat
 =========
 
-A brief description of the role goes here.
+Conjunto de paquetes requeridos para equipos Redhat
 
 Requirements
 ------------
