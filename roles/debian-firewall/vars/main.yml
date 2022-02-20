@@ -1,0 +1,4 @@
+---
+# vars file for roles/debian-firewall
+#
+paquetes: ufw 
