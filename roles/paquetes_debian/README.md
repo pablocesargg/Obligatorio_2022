@@ -1,8 +1,8 @@
-Role Name
+Role Name: Paquetes Debian
 =========
 
 A brief description of the role goes here.
-
+Conjunto de paquetes requeridos para Debian
 Requirements
 ------------
 
