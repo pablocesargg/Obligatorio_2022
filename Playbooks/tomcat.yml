@@ -1,14 +1,23 @@
 ---
 - name: instalacion de servidor Tomcat
-  host: linux
+  hosts: linux
   become: yes
 
   tasks: 
-  - name: install java 
+
+  - name: Instalar Java en Redhat
     yum:
       name: java
       state: latest
+    when: ansible_os_family == "Rocky"
 
+  - name: Instalar Java en Debian
+    apt:
+      name: java
+      state: latest 
+    when: ansible_os_family == "Debian" 
+
+      
   - name: Descargando paquetes del servidor Tomcat
     get_url:
       urd: https://archive.apache.org/dist/tomcat/tomcat-9/v9.0.41/bin/apache-tomcat-9.0.41-deployer.tar.gz

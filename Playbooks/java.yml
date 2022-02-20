@@ -1,0 +1,19 @@
+---
+- name: Instalar java
+  hosts: linux
+  gather_facts: false
+
+  tasks: 
+  - yum:
+      name: "*"
+      states: latest
+  - name: Instalar  Opennjdk
+    yum: 
+      name: java-1.8.0-Opennjdk
+  - name: setting default java
+    alternativas:
+      name: java
+      link: /usr/bin/java
+      
+    
+  
