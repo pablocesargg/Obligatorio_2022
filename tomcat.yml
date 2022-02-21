@@ -17,9 +17,39 @@
     loop: "{{ paquetes_rh }}"
     when: ansible_os_family == "Rocky"
 
+  - name: Instalar paquetes en Debian
+    apt:
+      name: "{{ item }}"
+      state: present
+      update_cache: yes
+    loop: "{{ paquetes_deb }}"
+    when: ansible_os_family == "debian"
+
+
   - name: Descargar e instalar tomcat
     unarchive: 
       src: "{{ tomcat_url }}"
       dest: /opt
       remote_src: yes
-    register: installok
+   
+  - name: Instalar servicio tomcat
+    template:
+      src: tomcat.service.j2 
+      dest: /etc/systemd/tomcat.service
+    notify: Reiniciar Tomcat
+
+  - name: Tomcat esta habilitado e iniciado
+    systemd:
+      name: tomcat
+      state: started
+      enabled: yes 
+    
+
+  handlers: 
+
+  - name: Reiniciar Tomcat
+    systemd: 
+      daemon_reload: yes       
+      name: tomcat
+      state: restarted 
+      enabled: yes 

@@ -8,6 +8,6 @@
 
 - name: Regla por defecto para interfaz loopback
   ufw: 
-    interface: io
+    interface: lo
     policy: allow 
     

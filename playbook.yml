@@ -1,5 +1,5 @@
 ---
-- hosts: all
+- hosts: linux
   remote_user: ansible
   become: yes
   become_method: sudo
@@ -11,7 +11,7 @@
   tasks:
 
 - name: Instalar paquetes en Red Hat
-   dnf:
+  dnf:
     name: "{{ item }}"
     state: present
   loop: "{{ paquetes_rh }}"
