@@ -1,7 +1,13 @@
+<<<<<<< HEAD
 #             Consigna- Obligatorio 
 ### Taller Instalacion Servidores Linux
+=======
+#              Obligatorio 
+### Taller Instalacion Servidores Linux  
+>>>>>>> 27db6a962326316e50bee80c8b8f224ae50f4d73
 
-* Se puede encontrar toda la documentacion del trabajo obligatorio en la carpeta Doc_Obligatorio*
+
+_Se puede encontrar toda la documentacion del trabajo obligatorio en la carpeta Doc_Obligatorio_
 
 ## Parte A:
 
@@ -40,17 +46,40 @@ LVM:
 ---------------------------------------------------------------------------------------------------
 Ver detalles de configuracion en documento de VMs en documento adjunto.
 
+<<<<<<< HEAD
 ---------------------------------------------------------------------------------------------------
 Ansible:
+=======
+~~~
+Todos los volúmenes y particiones fueron generados en el asistente de instalación de los sistemas. 
+Los volúmenes lógicos fueron creados con LVM y pertenecen a un mismo grupo de volúmenes (Volume
+Group).
+~~~
+>>>>>>> 27db6a962326316e50bee80c8b8f224ae50f4d73
 
+Se le dieron permisos para elevar privilegios (sudo) sin contraseña. Esto se logra
+agregando la siguiente línea al final del archivo /etc/sudoers:
+```bash
+ansible ALL=(ALL) NOPASSWD:ALL
+```
+~~~
+Una vez asegurada la conexión entre el bastión y los equipos a configurar, se copian las claves públicas
+hacia cada uno de los servidores, para poder establecer la conexión vía SSH.
+De esta forma, se podrá acceder vía SSH a los servidores sin necesidad de ingresar contraseña del
+usuario ansible.
+~~~
 
 ----------------------------------------------------------------------------------------------------
 
+<<<<<<< HEAD
 Estructura de Playbooks:
 se separan las tareas en roles, del tipo:
 paquetes_debian  paquetes_redhat  prueba   firewall-debian  firewall-redhat  servidor-apache  serv-bd
 
 Cada "sub-rol" tiene  cargadas tanto "tasks" como "vars" junto con una breve explicacion en el archivo" Readme" de c/u.. 
+=======
+==============================================================================
+>>>>>>> 27db6a962326316e50bee80c8b8f224ae50f4d73
 
 
 
