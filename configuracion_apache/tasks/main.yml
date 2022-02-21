@@ -1,0 +1,11 @@
+---
+# tasks file for configuracion_apache
+- name: Cargar archivo de configuracion httpd al servidor
+  template: 
+      src: httpd.conf
+      dest: "{{ directorio }}/httpd.conf"
+
+- name: Copiar archivo de virtualhost al servidor
+  template: 
+      src: reverse_proxy.conf.j2
+      dest: "{{ directorio }}/reverse_proxy.conf"

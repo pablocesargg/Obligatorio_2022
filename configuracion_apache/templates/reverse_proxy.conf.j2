@@ -1,0 +1,17 @@
+<VirtualHost *:80>
+
+ServerName localhost
+
+    <Proxy balancer://{{ name_cluster }}>
+
+        BalancerMember {{ server1 }}
+        BalancerMember {{ server2 }}
+
+    </Proxy>
+
+    ProxyPreserveHost On
+
+    ProxyPass / balancer://{{ name_cluster }}/
+    ProxyPassReverse / balancer://{{ name_cluster }}/
+
+</VirtualHost>

@@ -1,0 +1,10 @@
+---
+# vars file for configuracion_apache
+directorio: /tmp/
+
+#Lista de servidores de Backend
+server1: http://192.168.56.110:80
+server2: http://192.168.56.110:81
+
+#Nombre del cluster
+name_cluster: taller
