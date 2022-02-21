@@ -3,8 +3,8 @@
 directorio: /tmp/
 
 #Lista de servidores de Backend
-server1: http://192.168.56.110:80
-server2: http://192.168.56.110:81
+Rocky: http://192.168.43.48:80
+ubuntu: http://192.168.43.69:81
 
 #Nombre del cluster
 name_cluster: taller

@@ -4,8 +4,8 @@ ServerName localhost
 
     <Proxy balancer://{{ name_cluster }}>
 
-        BalancerMember {{ server1 }}
-        BalancerMember {{ server2 }}
+        BalancerMember {{ Rocky }}
+        BalancerMember {{ ubuntu }}
 
     </Proxy>
 
