@@ -1,9 +1,8 @@
-<<<<<<< HEAD
-# Obligatorio 
-#
+# Obligatorio Inline-style: 
+![alt text]https://github.com/pablocesargg/Obligatorio_2022/blob/main/Doc_Obligatorio/Ansible_logo.svg.png
 ### Taller Instalacion Servidores Linux
 
-## 
+##
 Parte A:
 
 Para realizar el escenario que pide la letra vamos a necesita contar con un equipo bastión con ansible instalado.
@@ -37,4 +36,4 @@ Hasta las 21:00Hs del martes 22
 
 =======
 # Obligatorio_2022
->>>>>>> aa68fb94270509e0adf7f5c023a7a277cd7fa4c6
+
