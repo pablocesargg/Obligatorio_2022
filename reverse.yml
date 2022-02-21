@@ -1,8 +1,0 @@
-<IfModule mod_proxy.c>
-  ProxyRequests Off
-  <Proxy *>
-    Require all granted
-  </proxy>
-  ProxyPass / http://localhost:8080
-  proxyPassReverse / http://localhost:8080
-</IfModule>
