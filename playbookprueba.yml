@@ -3,12 +3,8 @@
   remote_user: ansible
 
   tasks: 
-  - name: "test ping"
-    ping:
 
-  - name: "echo Obligatorio Taller 2022"
-    shell: /usr/bin/echo "Obligatorio Taller 2022"
-    register: Obligatorio
+  - include-role
+      name: prueba
 
-  - name: "Salida con echo"
-    debug: msg="{{ hello.stdout }}"
+
