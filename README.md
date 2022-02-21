@@ -1,4 +1,4 @@
-#              Obligatorio 
+#             Consigna- Obligatorio 
 ### Taller Instalacion Servidores Linux
 
 * Se puede encontrar toda la documentacion del trabajo obligatorio en la carpeta Doc_Obligatorio*
@@ -37,16 +37,21 @@ LVM:
 - 1GB para /home
 - 5GB /opt
 - 2GB de Swap.
+---------------------------------------------------------------------------------------------------
+Ver detalles de configuracion en documento de VMs en documento adjunto.
+
+---------------------------------------------------------------------------------------------------
+Ansible:
+
+
+----------------------------------------------------------------------------------------------------
+
+Estructura de Playbooks:
+se separan las tareas en roles, del tipo:
+paquetes_debian  paquetes_redhat  prueba   firewall-debian  firewall-redhat  servidor-apache  serv-bd
+
+Cada "sub-rol" tiene  cargadas tanto "tasks" como "vars" junto con una breve explicacion en el archivo" Readme" de c/u.. 
 
 
 
-
-
-============================================================================================================
-
-#### Entrega Obligatorio 22/2
-#### Defensa Obligatorio 23/2
-##### Defensa en Lab 113
-
-Hasta las 21:00Hs del martes 22
-## license 
+=====================================================================================================
