@@ -1,7 +1,6 @@
 # Obligatorio Inline-style: 
-![alt text]https://github.com/pablocesargg/Obligatorio_2022/blob/main/Doc_Obligatorio/Ansible_logo.svg.png
-### Taller Instalacion Servidores Linux
 
+### Taller Instalacion Servidores Linux
 ##
 Parte A:
 
