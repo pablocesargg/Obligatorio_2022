@@ -6,7 +6,7 @@ _Se puede encontrar toda la documentacion del trabajo obligatorio en la carpeta 
 
 ## Parte A:
 
-Para realizar el escenario que pide la letra vamos a necesita contar con un equipo bastión con ansible instalado.
+Para realiza el escenario que pide la letra vamos a necesita contar con un equipo bastión con ansible instalado.
 - Con el siguiente comando instalamos ansible: 
 ```bash
 sudo apt install ansible
