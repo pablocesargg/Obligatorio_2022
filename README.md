@@ -5,11 +5,18 @@
 
 ##Parte A:
 Para realizar el escenario que pide la letra vamos a necesita contar con un equipo bastión con ansible instalado.
-
-Con el comando ```sudo apt install ansible``` se instalan los paquetes y dependencias requeridas para poder utilizarlo.
-Se repite el mismo procedimiento para git ```sudo apt install git```.
-
-Luego se crearon dos máquinas virtuales, una corriendo Ubuntu Server 20.04 y la otra con Rocky 8.5.
+- Con el siguiente comando instalamos ansible: 
+```bash
+sudo apt install ansible
+```
+- Con el siguiente comndo instalamos git
+```bash
+sudo apt install git
+```
+Se crearon dos máquinas virtuales:
+#Servidores
+- Ubuntu Server 20.04 
+- Rocky 8.5.
 
 Ambos servidores cuentan con dos interfaces de red, una configurada como NAT 
 (para navegación a internet) y la otra definida como red Sólo Anfitrión (para la comunicación con el equipo bastión), y fueron instalados con las siguientes características:
