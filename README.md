@@ -3,7 +3,8 @@
 
 * Se puede encontrar toda la documentacion del trabajo obligatorio en la carpeta Doc_Obligatorio*
 
-##Parte A:
+## Parte A:
+
 Para realizar el escenario que pide la letra vamos a necesita contar con un equipo bastión con ansible instalado.
 - Con el siguiente comando instalamos ansible: 
 ```bash
@@ -39,13 +40,13 @@ LVM:
 
 
 
+
+
+============================================================================================================
+
 #### Entrega Obligatorio 22/2
 #### Defensa Obligatorio 23/2
 ##### Defensa en Lab 113
-##Prueba 
 
 Hasta las 21:00Hs del martes 22
-
-=======
-# Obligatorio_2022
-
+## license 
