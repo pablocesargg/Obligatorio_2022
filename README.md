@@ -1,7 +1,8 @@
 #              Obligatorio 
-### Taller Instalacion Servidores Linux
+### Taller Instalacion Servidores Linux  
 
-* Se puede encontrar toda la documentacion del trabajo obligatorio en la carpeta Doc_Obligatorio*
+
+_Se puede encontrar toda la documentacion del trabajo obligatorio en la carpeta Doc_Obligatorio_
 
 ## Parte A:
 
@@ -38,11 +39,26 @@ LVM:
 - 5GB /opt
 - 2GB de Swap.
 
+~~~
+Todos los volúmenes y particiones fueron generados en el asistente de instalación de los sistemas. 
+Los volúmenes lógicos fueron creados con LVM y pertenecen a un mismo grupo de volúmenes (Volume
+Group).
+~~~
+
+Se le dieron permisos para elevar privilegios (sudo) sin contraseña. Esto se logra
+agregando la siguiente línea al final del archivo /etc/sudoers:
+```bash
+ansible ALL=(ALL) NOPASSWD:ALL
+```
+~~~
+Una vez asegurada la conexión entre el bastión y los equipos a configurar, se copian las claves públicas
+hacia cada uno de los servidores, para poder establecer la conexión vía SSH.
+De esta forma, se podrá acceder vía SSH a los servidores sin necesidad de ingresar contraseña del
+usuario ansible.
+~~~
 
 
-
-
-============================================================================================================
+==============================================================================
 
 #### Entrega Obligatorio 22/2
 #### Defensa Obligatorio 23/2
