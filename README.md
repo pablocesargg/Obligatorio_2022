@@ -62,6 +62,9 @@ usuario ansible.
 ~~~
 
 ----------------------------------------------------------------------------------------------------
+Playbooks:
 
+Ejecutar main.yml para la instalacion del conjunto de paquetes requeridos
+Editar vars.yml para agregar o quitar algun paquete de la lista de instalacion 
 
 
