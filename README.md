@@ -60,9 +60,15 @@ usuario ansible.
 ~~~
 
 ----------------------------------------------------------------------------------------------------
+Playbooks:
 
+<<<<<<< HEAD
 _Los plybook principales a ejecutar son:_
 _ansible-playbook update.yml_
 _ansible-playbook main.yml_
+=======
+Ejecutar main.yml para la instalacion del conjunto de paquetes requeridos
+Editar vars.yml para agregar o quitar algun paquete de la lista de instalacion 
+>>>>>>> 17f5e07d1f0bfe4e13240baafdcb34020500409c
 
 
