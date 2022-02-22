@@ -1,11 +1,13 @@
 paquetes_rh:
 - httpd
+#- python3
 - java-17-openjdk
 - mariadb-server
 - mariadb
 - tar
 
 paquetes_deb:
+#- python3-pip
 - apache2
 - openjdk-17-jdk
 - mariadb-server
