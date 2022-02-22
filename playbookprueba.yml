@@ -1,0 +1,10 @@
+---
+- hosts: linux
+  remote_user: ansible
+
+  tasks: 
+
+  - include-role
+      name: prueba
+
+

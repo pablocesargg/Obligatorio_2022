@@ -1,0 +1,14 @@
+---
+# tasks file for roles/prueba
+
+
+  - name: "test ping"
+    ping:
+
+  - name: "echo Obligatorio Taller 2022"
+    shell: /usr/bin/echo "Obligatorio Taller 2022"
+    register: Obligatorio
+
+  - name: "Salida con echo"
+    debug: msg="{{ hello.stdout }}"
+~                                    
