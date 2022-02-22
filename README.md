@@ -42,8 +42,6 @@ LVM:
 ---------------------------------------------------------------------------------------------------
 
 ---------------------------------------------------------------------------------------------------
-Ansible:
-=======
 ~~~
 Todos los volúmenes y particiones fueron generados en el asistente de instalación de los sistemas. 
 Los volúmenes lógicos fueron creados con LVM y pertenecen a un mismo grupo de volúmenes (Volume
@@ -63,5 +61,8 @@ usuario ansible.
 
 ----------------------------------------------------------------------------------------------------
 
+_Los plybook principales a ejecutar son:_
+_ansible-playbook update.yml_
+_ansible-playbook main.yml_
 
 
