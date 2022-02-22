@@ -1,55 +1,103 @@
 ---
 - hosts: linux
-  remote_user: ansible 
+  remote_user: ansible
   become: yes
   become_method: sudo
 
-# Incluyo archivo de variables en el playbook
+#Incluyo archivo de variables en el playbook
   vars_files:
-  - ./vars.yml
+  - ./vars.yml  
 
   tasks:
-   
-  - name: Instalar paquetes en Red Hat
+
+  - name: Instalar paquetes RedHat en servidor Rocky
     dnf:
       name: "{{ item }}"
-      state: present
+      state: present 
     loop: "{{ paquetes_rh }}"
-    when: ansible_os_family == "Rocky"
+    when: ansible_os_family  == "Rocky"
 
-  - name: Instalar paquetes en Debian
+  - name: Instalar paquetes Debian en servidor ubuntu
     apt:
       name: "{{ item }}"
       state: present
-      update_cache: yes
+      update_cache: yes 
     loop: "{{ paquetes_deb }}"
-    when: ansible_os_family == "debian"
+    when: ansible_os_family  == "Debian"
 
+  - name: Crear grupo tomcat
+    group:
+      name: tomcat
+      state: present
+
+  - name: Crear usuario tomcat
+    user:
+      name: tomcat
+      group: tomcat
+      comment: Tomcat server user
+      state: present
 
   - name: Descargar e instalar tomcat
-    unarchive: 
+    unarchive:
       src: "{{ tomcat_url }}"
       dest: /opt
       remote_src: yes
-   
-  - name: Instalar servicio tomcat
+
+  - name: Cambiar dueño del directorio Tomcat
+    file:
+      path: "{{ tomcat_dir }}"
+      owner: tomcat
+      group: tomcat
+      recurse: yes
+
+  - name: Instalar servicio Tomcat
     template:
-      src: tomcat.service.j2 
-      dest: /etc/systemd/tomcat.service
+      src: tomcat.service.j2
+      dest: /etc/systemd/system/tomcat.service
     notify: Reiniciar Tomcat
 
-  - name: Tomcat esta habilitado e iniciado
+  - name: Tomcat está habilitado e iniciado
     systemd:
       name: tomcat
       state: started
-      enabled: yes 
-    
+      enabled: yes
+      daemon_reload: yes
 
-  handlers: 
+  - name: Descargar la aplicacion para url
+    get_url:
+      url: https://aulas.ort.edu.uy/pluginfile.php/642237/mod_page/content/3/todo.war
+      dest: "{{ tomcat_dir }}/webapps/"
+      url_username: "{{ ort_user }}"
+      url_password: "{{ ort_password }}"
+      
+
+  - name: Configuro reverse proxy
+    copy:
+      src: proxy.conf
+      dest: /etc/httpd/conf.d/
+      owner: root
+      group: root
+    when: ansible_os_family == "Rocky"
+
+  - name: Apache iniciado y habilitado
+    systemd:
+      name: httpd
+      state: started
+      enabled: yes
+    when: ansible_os_family == "Rocky"
+
+  - name: Abrir puerto 80
+    firewalld:
+      service: httpd
+      permanent: yes
+      state: enabled 
+    when: ansible_os_family == "Rocky"
+
+  handlers:
 
   - name: Reiniciar Tomcat
-    systemd: 
-      daemon_reload: yes       
+    systemd:
+      daemon_reload: yes
       name: tomcat
-      state: restarted 
-      enabled: yes 
+      state: restarted
+      enabled: yes

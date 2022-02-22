@@ -22,37 +22,36 @@
     when: ansible_os_family == "Debian"
     notify: Reiniciar servidor 
 
- #  - name: firewall activado con ssh habilitado en RedHat
- #   firewall:
- #     permanent: yes 
- #     status: enabled 
- #    port: 22/tcp 
- #   when: ansible_os_family == "Rocky"
+#- name: firewall activado con ssh habilitado en RedHat
+#    firewall:
+#       permanent: yes 
+#       status: enabled 
+#       port: 22/tcp 
+#    when: ansible_os_family == "Rocky"
 
-  # name: Instalar ufw package
-  # apt:
-  #  name: ufw
-  # state: latest
-  # when: ansible_os_family == "Debian"
+#  - name: Instalar ufw package
+#    apt:
+#     name: ufw
+#      state: latest
+#   when: ansible_os_family == "Debian"
     
-  #- name: UFW default incoming rules
-  #  ufw: 
-  #    direction: incoming
-  #    policy: deny
-  #    rule: allow
-  #    port: "22"
-  #    proto: tcp 
-  #    state: enable
-  #  when: ansible_os_family == "Debian"
+  - name: UFW default incoming rules
+    ufw: 
+      direction: incoming
+      policy: deny
+      rule: allow
+      port: "22"
+      proto: tcp 
+      state: enable
+    when: ansible_os_family == "Debian"
   
-  # name: UFW regla para paquetes salientes
-  #  ufw:
-  #   direction: outgoing
-  #    policy: allow
-  #   state: enable
-  # when: ansible_os_family == "Debian"
+  - name: UFW regla para paquetes salientes
+    ufw:
+       direction: outgoing
+       policy: allow
+       state: enable
+    when: ansible_os_family == "Debian"
  
   handlers:
-
   - name: Reiniciar servidor
     reboot: 
