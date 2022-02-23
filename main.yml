@@ -7,17 +7,18 @@
 #Incluyo archivo de variables en el playbook
   vars_files:
   - ./vars.yml  
+  #- ./password.yml
 
   tasks:
 
-  - name: Instalar paquetes RedHat en servidor Rocky
+  - name: Instalar paquetes en Red Hat 
     dnf:
       name: "{{ item }}"
       state: present 
     loop: "{{ paquetes_rh }}"
     when: ansible_os_family  == "Rocky"
 
-  - name: Instalar paquetes Debian en servidor ubuntu
+  - name: Instalar paquetes en Debian
     apt:
       name: "{{ item }}"
       state: present
@@ -63,7 +64,7 @@
       enabled: yes
       daemon_reload: yes
 
-  - name: Descargar la aplicacion para url
+  - name: Descargar la aplicacion Demo
     get_url:
       url: https://aulas.ort.edu.uy/pluginfile.php/642237/mod_page/content/3/todo.war
       dest: "{{ tomcat_dir }}/webapps/"
